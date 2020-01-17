@@ -1,3 +1,6 @@
+<% if user_signed_in? %>
+  <%= link_to "サインアウト", destroy_user_session_path, method: :delete %>
+<% end %>
 <p>トップページだよ！</p>
 
 <%= link_to "ボタンでーす", "#", class: "btn btn-primary" %>
