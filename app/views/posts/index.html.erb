@@ -20,6 +20,8 @@
         <%= link_to(post_path(post)) do %>
           <%= image_tag post.photos.first.image.url(:medium), class: "card-img-top" %>
         <% end %>
+        <span><strong><%= post.user.name %></strong></span>
+            <span><%= post.caption %></span>
         <div class="card-body">
           <div class="row parts">
             <div id="like-icon-post-<%= post.id.to_s %>">
@@ -35,9 +37,8 @@
             <%= render "like_text", { likes: post.likes } %>
           </div>
           <div>
-            <span><strong><%= post.user.name %></strong></span>
-            <span><%= post.caption %></span>
-            <%= link_to time_ago_in_words(post.created_at).upcase + "前", post_path(post), class: "post-time no-text-decoration" %>
+
+            
             <div id="comment-post-<%= post.id.to_s %>">
               <%= render 'comment_list', { post: post } %>
             </div>
