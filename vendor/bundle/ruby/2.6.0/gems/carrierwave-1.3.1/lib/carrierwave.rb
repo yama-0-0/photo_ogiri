@@ -115,3 +115,7 @@ require "carrierwave/storage"
 require "carrierwave/uploader"
 require "carrierwave/compatibility/paperclip"
 require "carrierwave/test/matchers"
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
+
