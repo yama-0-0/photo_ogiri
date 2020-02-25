@@ -1,6 +1,7 @@
 require 'carrierwave/storage/fog'
 
   CarrierWave.configure do |config|
+    if Rails.env.production?
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       provider:              'AWS',
@@ -11,4 +12,5 @@ require 'carrierwave/storage/fog'
     config.fog_directory  = 'photo-ogiri-2020'
     config.fog_public     = true
     config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
+    end
   end
